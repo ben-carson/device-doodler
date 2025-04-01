@@ -10,7 +10,8 @@ import {
   addEdge,
   Panel,
   Connection,
-  Edge
+  Edge,
+  ConnectionMode
 } from "@xyflow/react";
 import DeviceNode from "./DeviceNode";
 import GroupNode from "./GroupNode";
@@ -94,7 +95,7 @@ const NetworkFlow = () => {
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={nodeTypes}
-        connectionMode={isConnecting ? "loose" : "strict"}
+        connectionMode={isConnecting ? ConnectionMode.Loose : ConnectionMode.Strict}
         fitView
         onInit={onLoad}
       >

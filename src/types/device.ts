@@ -1,22 +1,20 @@
 
-import { NodeProps } from "@xyflow/react";
+import { Node } from "@xyflow/react";
 
 export interface DeviceData {
   name: string;
   ipAddress: string;
   notes: string;
   type: "computer" | "server" | "router" | "network" | "database" | "wifi" | "cable";
+  [key: string]: unknown; // Add index signature to make it compatible with Record<string, unknown>
 }
 
-export interface DeviceNode extends NodeProps {
-  data: DeviceData;
-}
+export type DeviceNode = Node<DeviceData>;
 
 export interface DeviceGroupData {
   name: string;
   color: string;
+  [key: string]: unknown; // Add index signature to make it compatible with Record<string, unknown>
 }
 
-export interface DeviceGroupNode extends NodeProps {
-  data: DeviceGroupData;
-}
+export type DeviceGroupNode = Node<DeviceGroupData>;
