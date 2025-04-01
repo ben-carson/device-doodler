@@ -1,7 +1,7 @@
 
 import { memo } from "react";
 import { Handle, Position } from "@xyflow/react";
-import { Computer, Server, Router, Database, Wifi, Cable, Network } from "lucide-react";
+import { Computer, Server, Router, Database, Wifi, Cable, Network, Edit } from "lucide-react";
 
 const DeviceNode = ({ data, selected }: { data: any, selected: boolean }) => {
   const getIcon = () => {
@@ -27,7 +27,7 @@ const DeviceNode = ({ data, selected }: { data: any, selected: boolean }) => {
 
   return (
     <div
-      className={`p-4 rounded-md shadow-md bg-white border-2 ${
+      className={`p-4 rounded-md shadow-md bg-white border-2 relative ${
         selected ? "border-accent" : "border-gray-200"
       }`}
     >
@@ -45,6 +45,12 @@ const DeviceNode = ({ data, selected }: { data: any, selected: boolean }) => {
             {data.notes}
           </div>
         )}
+      </div>
+      
+      {/* Edit indicator */}
+      <div className="absolute top-1 right-1 text-gray-400 text-xs opacity-50 hover:opacity-100">
+        <Edit size={12} />
+        <span className="sr-only">Right-click to edit</span>
       </div>
     </div>
   );

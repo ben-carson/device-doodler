@@ -35,6 +35,8 @@ export const useNetworkFlow = () => {
     // State
     nodes,
     edges,
+    setNodes,
+    setEdges,
     onNodesChange,
     onEdgesChange,
     isConnecting,
