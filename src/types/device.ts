@@ -18,3 +18,37 @@ export interface DeviceGroupData {
 }
 
 export type DeviceGroupNode = Node<DeviceGroupData>;
+
+export interface DBDevice {
+  id: string;
+  name: string;
+  ip_address: string;
+  notes: string;
+  type: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DBDeviceGroup {
+  id: string;
+  name: string;
+  color: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DBDeviceConnection {
+  id: string;
+  source_id: string;
+  target_id: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DBDeviceGroupMapping {
+  id: string;
+  device_id: string;
+  group_id: string;
+  created_at: string;
+  updated_at: string;
+}
